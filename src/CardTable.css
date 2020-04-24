@@ -1,0 +1,15 @@
+.CardTable {
+  max-width: 400px; 
+  padding: 30px; 
+  margin: 30px auto; 
+  border: 1px solid skyblue;
+}
+
+.CardTable li {
+  margin-top: 10px;;
+}
+
+li:first-child {
+  font-style: italic;
+  font-weight: 600;
+}
