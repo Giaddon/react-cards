@@ -40,15 +40,22 @@ function CardTable() {
     }
   }
 
+  async function shuffleDeck(){
+    const resp = await axios.get(`${CARDSAPI}/${deckID}/shuffle`);
+    setDeckIsEmpty(false);
+    setDrawnCards(cards => []);
+    console.log(`\n\n\n The value of DrawnCards is `, drawnCards);
+  }
+
   return (
     <div className="CardTable">
       <button onClick={drawCard}>Draw a card</button>
+      <button onClick={shuffleDeck}>Shuffle Deck</button>
       {
         drawnCards.length > 0
           ? <ol> { drawnCards.map( c => <li>{c.value} of {c.suit}</li>) } </ol> 
           : <p>No cards drawn.</p>
       }
-      
     </div>
   )
 }
